@@ -139,7 +139,3 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
-.idea/
-Kadrohelper.iml
-src/main/resources/
-src/test/
