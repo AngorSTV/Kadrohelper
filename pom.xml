@@ -65,7 +65,7 @@
                         </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <outfile>${project.build.directory}\${project.name}.exe</outfile>
+                            <outfile>${project.build.directory}\kadrohelper.exe</outfile>
                             <jar>${project.build.directory}\original-${project.artifactId}-${project.version}.jar</jar>
                             <downloadUrl>http://java.com/download</downloadUrl>
                             <errTitle>enccg</errTitle>
@@ -81,11 +81,11 @@
                                 <fileVersion>1.0.0.0</fileVersion>
                                 <txtFileVersion>${project.version}</txtFileVersion>
                                 <fileDescription>${project.name}</fileDescription>
-                                <copyright>informika</copyright>
+                                <copyright>Angor</copyright>
                                 <productVersion>1.0.0.0</productVersion>
                                 <txtProductVersion>${project.version}</txtProductVersion>
-                                <productName>sedkpj</productName>
-                                <internalName>louncher</internalName>
+                                <productName>kadrohelper</productName>
+                                <internalName>kadrohelper</internalName>
                                 <originalFilename>original.exe</originalFilename>
                             </versionInfo>
                         </configuration>

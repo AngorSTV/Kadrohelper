@@ -31,12 +31,12 @@
                     <content>
                         <AnchorPane>
                             <children>
-                                <DatePicker fx:id="startDate" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0" />
-                                <DatePicker layoutX="14.0" layoutY="101.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
+                                <DatePicker fx:id="startDatePicker" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0" />
+                                <DatePicker fx:id="endDatePicker" layoutX="14.0" layoutY="101.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
                                 <Label layoutX="14.0" layoutY="134.0" text="Длительность периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="115.0" />
                         <Label layoutY="6.0" text="Дата начала периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
                         <Label layoutX="14.0" layoutY="63.0" text="Дата конца периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0" />
-                        <TextField layoutX="14.0" layoutY="132.0" prefHeight="25.0" prefWidth="174.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="132.0" />
+                        <TextField fx:id="result" layoutX="14.0" layoutY="132.0" prefHeight="25.0" prefWidth="174.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="132.0" />
                             </children>
                         </AnchorPane>
                     </content>
