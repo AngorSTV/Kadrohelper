@@ -25,29 +25,28 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TabPane layoutX="8.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <TabPane layoutX="8.0" layoutY="25.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
             <tabs>
                 <Tab text="Период">
                     <content>
-                        <AnchorPane>
+                        <AnchorPane fx:id="periodAPane">
                             <children>
                                 <DatePicker fx:id="startDatePicker" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0" />
                                 <DatePicker fx:id="endDatePicker" layoutX="14.0" layoutY="101.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
                                 <Label layoutX="14.0" layoutY="134.0" text="Длительность периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="115.0" />
                         <Label layoutY="6.0" text="Дата начала периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
                         <Label layoutX="14.0" layoutY="63.0" text="Дата конца периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0" />
-                        <TextField fx:id="result" layoutX="14.0" layoutY="132.0" prefHeight="25.0" prefWidth="174.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="132.0" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="Сумма периодов">
                     <content>
-                        <ScrollPane>
+                        <ScrollPane prefHeight="262.0" prefWidth="600.0">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                <AnchorPane>
                                     <children>
-                                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        <VBox AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                         <Label text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                                     </children>
                                 </AnchorPane>
