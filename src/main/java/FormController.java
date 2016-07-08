@@ -60,7 +60,9 @@ public class FormController {
         //--- End Period Tab ---
 
         //--- Sum Period Tab ---
-        PeriodView periodSum = new PeriodView();
+        vBox.getChildren().add(new IPeriod());
+        vBox.getChildren().add(new IPeriod());
+        /*PeriodView periodSum = new PeriodView();
         periodList.add(periodSum);
         vBox.getChildren().add(periodSum);
 
@@ -74,14 +76,14 @@ public class FormController {
         resultSumPeriod = new PeriodView();
         AnchorPane.setBottomAnchor(resultSumPeriod, 4.0);
         AnchorPane.setLeftAnchor(resultSumPeriod, 14.0);
-        paneSumPeriod.getChildren().add(resultSumPeriod);
+        paneSumPeriod.getChildren().add(resultSumPeriod);*/
 
         buttonAddPeriod.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                PeriodView periodSum = new PeriodView();
-                periodList.add(periodSum);
-                vBox.getChildren().add(periodSum);
+                //PeriodView periodSum = new PeriodView();
+                //periodList.add(periodSum);
+                vBox.getChildren().add(new IPeriod());
             }
         });
         vBox.addEventHandler(KeyEvent.ANY, new EventHandler<KeyEvent>() {

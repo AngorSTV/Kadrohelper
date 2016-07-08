@@ -44,12 +44,12 @@
                     <content>
                         <AnchorPane fx:id="paneSumPeriod">
                             <children>
-                                <ScrollPane prefHeight="300.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="0.0">
+                                <ScrollPane prefHeight="300.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="33.0">
                                     <content>
-                                        <VBox fx:id="vBox" />
+                                        <VBox fx:id="vBox" prefWidth="580.0" spacing="3.0" />
                                     </content>
                                 </ScrollPane>
-                                <Button fx:id="buttonAddPeriod" mnemonicParsing="false" text="Добавить период" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="30.0" />
+                                <Button fx:id="buttonAddPeriod" mnemonicParsing="false" text="Добавить период" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0" />
                             </children>
                         </AnchorPane>
                     </content>
