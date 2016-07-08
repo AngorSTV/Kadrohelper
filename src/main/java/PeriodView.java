@@ -1,5 +1,8 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.time.Period;
@@ -27,6 +30,12 @@ public class PeriodView extends AnchorPane {
         AnchorPane.setTopAnchor(yearsField, 0.0);
         AnchorPane.setLeftAnchor(yearsField, 0.0);
         getChildren().add(yearsField);
+        yearsField.addEventHandler(KeyEvent.ANY, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                //Period.ofYears()
+            }
+        });
 
         Label label = new Label("лет");
         AnchorPane.setTopAnchor(label, 5.0);
@@ -61,6 +70,10 @@ public class PeriodView extends AnchorPane {
     public void setPeriod(Period period) {
         this.period = period;
         refresh();
+    }
+
+    public Period getPeriod() {
+        return period;
     }
 
     private void refresh() {
