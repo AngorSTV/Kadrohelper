@@ -2,6 +2,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -60,23 +61,18 @@ public class FormController {
         //--- End Period Tab ---
 
         //--- Sum Period Tab ---
-        vBox.getChildren().add(new IPeriod());
-        vBox.getChildren().add(new IPeriod());
-        /*PeriodView periodSum = new PeriodView();
-        periodList.add(periodSum);
-        vBox.getChildren().add(periodSum);
+        Label lab = new Label("Итого:");
+        AnchorPane.setTopAnchor(lab, 6.0);
+        AnchorPane.setLeftAnchor(lab, 350.0);
+        paneSumPeriod.getChildren().add(lab);
 
-        periodSum = new PeriodView();
-        periodList.add(periodSum);
-        vBox.getChildren().add(periodSum);
-        Label label = new Label("Итого:");
-        AnchorPane.setBottomAnchor(label, 32.0);
-        AnchorPane.setLeftAnchor(label, 14.0);
-        paneSumPeriod.getChildren().add(label);
         resultSumPeriod = new PeriodView();
-        AnchorPane.setBottomAnchor(resultSumPeriod, 4.0);
-        AnchorPane.setLeftAnchor(resultSumPeriod, 14.0);
-        paneSumPeriod.getChildren().add(resultSumPeriod);*/
+        AnchorPane.setTopAnchor(resultSumPeriod, 3.0);
+        AnchorPane.setLeftAnchor(resultSumPeriod, 390.0);
+        paneSumPeriod.getChildren().add(resultSumPeriod);
+
+        vBox.getChildren().add(new IPeriod());
+        vBox.getChildren().add(new IPeriod());
 
         buttonAddPeriod.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -86,10 +82,9 @@ public class FormController {
                 vBox.getChildren().add(new IPeriod());
             }
         });
-        vBox.addEventHandler(KeyEvent.ANY, new EventHandler<KeyEvent>() {
+        vBox.addEventHandler(Event.ANY, new EventHandler<Event>() {
             @Override
-            public void handle(KeyEvent event) {
-                System.out.println(event);
+            public void handle(Event event) {
                 sumPeriod();
             }
         });
@@ -100,11 +95,16 @@ public class FormController {
         int year = 0;
         int month = 0;
         int day = 0;
-        for (PeriodView period:periodList){
-            year += period.getPeriod().getYears();
-            month += period.getPeriod().getMonths();
-            day += period.getPeriod().getDays();
+
+        List<Node> list = vBox.getChildren();
+        for (Node node:list){
+            IPeriod iper = (IPeriod)node;
+            if (iper.getPeriod() == null) break;
+            year += iper.getPeriod().getYears();
+            month += iper.getPeriod().getMonths();
+            day += iper.getPeriod().getDays();
         }
+
         Period period = Period.of(year,month,day);
         resultSumPeriod.setPeriod(period);
     }

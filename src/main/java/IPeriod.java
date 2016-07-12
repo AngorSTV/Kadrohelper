@@ -58,7 +58,11 @@ public class IPeriod extends HBox {
         period = Period.between(startDate.getValue(), endDate.getValue());
         String str = period.getYears() + " лет ";
         str += period.getMonths() + " мес ";
-        str += period.getDays() + " дней";
+        str += period.getDays() + " дн.";
         resultPeriod.setText(str);
+    }
+
+    public Period getPeriod(){
+        return period;
     }
 }
