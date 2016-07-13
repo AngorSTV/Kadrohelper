@@ -63,12 +63,12 @@ public class FormController {
         //--- Sum Period Tab ---
         Label lab = new Label("Итого:");
         AnchorPane.setTopAnchor(lab, 6.0);
-        AnchorPane.setLeftAnchor(lab, 350.0);
+        AnchorPane.setLeftAnchor(lab, 300.0);
         paneSumPeriod.getChildren().add(lab);
 
         resultSumPeriod = new PeriodView();
         AnchorPane.setTopAnchor(resultSumPeriod, 3.0);
-        AnchorPane.setLeftAnchor(resultSumPeriod, 390.0);
+        AnchorPane.setLeftAnchor(resultSumPeriod, 340.0);
         paneSumPeriod.getChildren().add(resultSumPeriod);
 
         vBox.getChildren().add(new IPeriod());
@@ -104,9 +104,13 @@ public class FormController {
             month += iper.getPeriod().getMonths();
             day += iper.getPeriod().getDays();
         }
-
+        if (day > 30){
+            double adMonth = day/30;
+            month += (int) adMonth;
+            day = day - (int)(adMonth * 30);
+        }
         Period period = Period.of(year,month,day);
-        resultSumPeriod.setPeriod(period);
+        resultSumPeriod.setPeriod(period.normalized());
     }
 
     private void calcPeriod() {

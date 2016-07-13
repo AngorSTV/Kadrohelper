@@ -26,7 +26,7 @@ public class PeriodView extends AnchorPane {
 
         yearsField = new TextField(String.valueOf(period.getYears()));
         yearsField.setPrefHeight(25);
-        yearsField.setPrefWidth(30);
+        yearsField.setPrefWidth(35);
         AnchorPane.setTopAnchor(yearsField, 0.0);
         AnchorPane.setLeftAnchor(yearsField, 0.0);
         getChildren().add(yearsField);
@@ -44,7 +44,7 @@ public class PeriodView extends AnchorPane {
 
         monthField = new TextField(String.valueOf(period.getMonths()));
         monthField.setPrefHeight(25);
-        monthField.setPrefWidth(30);
+        monthField.setPrefWidth(35);
         AnchorPane.setTopAnchor(monthField, 0.0);
         AnchorPane.setLeftAnchor(monthField, 60.0);
         getChildren().add(monthField);
@@ -56,7 +56,7 @@ public class PeriodView extends AnchorPane {
 
         daysField = new TextField(String.valueOf(period.getDays()));
         daysField.setPrefHeight(25);
-        daysField.setPrefWidth(30);
+        daysField.setPrefWidth(35);
         AnchorPane.setTopAnchor(daysField, 0.0);
         AnchorPane.setLeftAnchor(daysField, 135.0);
         getChildren().add(daysField);
