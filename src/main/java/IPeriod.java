@@ -12,6 +12,7 @@ import java.time.Period;
 
 /**
  * Created by Андрей on 08.07.2016.
+ * Вью и контроллер отображающий и сразу вычисляющий период как разницу между двумяя датами
  */
 public class IPeriod extends HBox {
     private Period period;
