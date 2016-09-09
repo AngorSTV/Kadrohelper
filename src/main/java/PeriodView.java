@@ -1,5 +1,7 @@
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -31,12 +33,7 @@ public class PeriodView extends AnchorPane {
         AnchorPane.setTopAnchor(yearsField, 0.0);
         AnchorPane.setLeftAnchor(yearsField, 0.0);
         getChildren().add(yearsField);
-        yearsField.addEventHandler(KeyEvent.ANY, new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                //Period.ofYears()
-            }
-        });
+        action(yearsField);
 
         Label label = new Label("лет");
         AnchorPane.setTopAnchor(label, 5.0);
@@ -49,6 +46,7 @@ public class PeriodView extends AnchorPane {
         AnchorPane.setTopAnchor(monthField, 0.0);
         AnchorPane.setLeftAnchor(monthField, 60.0);
         getChildren().add(monthField);
+        action(monthField);
 
         label = new Label("месяц");
         AnchorPane.setTopAnchor(label, 5.0);
@@ -61,6 +59,7 @@ public class PeriodView extends AnchorPane {
         AnchorPane.setTopAnchor(daysField, 0.0);
         AnchorPane.setLeftAnchor(daysField, 135.0);
         getChildren().add(daysField);
+        action(daysField);
 
         label = new Label("дней");
         AnchorPane.setTopAnchor(label, 5.0);
@@ -68,9 +67,20 @@ public class PeriodView extends AnchorPane {
         getChildren().add(label);
     }
 
+    private void action(TextField textField) {
+        textField.addEventHandler(EventType.ROOT, new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                refresh();
+            }
+        });
+    }
+
     public void setPeriod(Period period) {
         this.period = period;
-        refresh();
+        yearsField.setText(String.valueOf(period.getYears()));
+        monthField.setText(String.valueOf(period.getMonths()));
+        daysField.setText(String.valueOf(period.getDays()));
     }
 
     public Period getPeriod() {
@@ -78,8 +88,11 @@ public class PeriodView extends AnchorPane {
     }
 
     private void refresh() {
-        yearsField.setText(String.valueOf(period.getYears()));
-        monthField.setText(String.valueOf(period.getMonths()));
-        daysField.setText(String.valueOf(period.getDays()));
+        if (!daysField.getText().isEmpty())
+            period = period.withDays(Integer.valueOf(daysField.getText()));
+        if (!monthField.getText().isEmpty())
+            period = period.withMonths(Integer.valueOf(monthField.getText()));
+        if (!yearsField.getText().isEmpty())
+            period = period.withYears(Integer.valueOf(yearsField.getText()));
     }
 }

@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -19,6 +20,7 @@ import java.util.List;
  * Created by Андрей on 04.07.2016.
  */
 public class FormController {
+    //--- Period Tab ---
     @FXML
     private AnchorPane periodAPane;
     @FXML
@@ -27,7 +29,9 @@ public class FormController {
     private DatePicker endDatePicker;
 
     private PeriodView resultPeriod;
+    //--- End Period Tab ---
 
+    //--- Sum Period Tab ---
     @FXML
     private VBox vBox;
     @FXML
@@ -36,6 +40,16 @@ public class FormController {
     private AnchorPane paneSumPeriod;
     private List<PeriodView> periodList = new ArrayList<>();
     private PeriodView resultSumPeriod;
+    //--- End Sum Period Tab ---
+
+    //--- Date Plus Period Tab ---
+    @FXML
+    private AnchorPane panelDatePlusPeriod;
+    @FXML
+    private DatePicker datePicker;
+    @FXML
+    private DatePicker datePicker1;
+    private PeriodView addPeriod;
 
 
     @FXML
@@ -89,6 +103,17 @@ public class FormController {
             }
         });
         //--- End Sum Period Tab ---
+        addPeriod = new PeriodView();
+        AnchorPane.setLeftAnchor(addPeriod, 14.0);
+        AnchorPane.setTopAnchor(addPeriod, 80.0);
+        panelDatePlusPeriod.getChildren().add(addPeriod);
+        addPeriod.addEventHandler(EventType.ROOT, new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                newPeriod();
+            }
+        });
+
     }
 
     private void sumPeriod() {
@@ -111,6 +136,20 @@ public class FormController {
         }
         Period period = Period.of(year,month,day);
         resultSumPeriod.setPeriod(period.normalized());
+    }
+
+    private void newPeriod(){
+        if (datePicker.getValue() == null){
+            return;
+        }
+        LocalDate times = datePicker.getValue();
+        Period ap = addPeriod.getPeriod();
+        times = times.plusDays(ap.getDays());
+        times = times.plusMonths(ap.getMonths());
+        times = times.plusYears(ap.getYears());
+
+        datePicker1.setValue(times);
+
     }
 
     private void calcPeriod() {

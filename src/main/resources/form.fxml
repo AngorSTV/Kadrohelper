@@ -70,10 +70,10 @@
                             <children>
                                 <Label layoutY="6.0" text="Начальная дата" AnchorPane.leftAnchor="14.0"
                                        AnchorPane.topAnchor="14.0"/>
-                                <DatePicker fx:id="DatePicker" layoutX="14.0" layoutY="14.0"
+                                <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="14.0"
                                             AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0"/>
                                 <Label layoutX="14.0" layoutY="62.0" text="Период"/>
-                                <DatePicker fx:id="DatePicker1" layoutX="14.0" layoutY="148.0"/>
+                                <DatePicker fx:id="datePicker1" layoutX="14.0" layoutY="148.0"/>
                                 <Label layoutX="14.0" layoutY="124.0" text="Итоговая дата"/>
                             </children>
                         </AnchorPane>
