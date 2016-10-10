@@ -4,47 +4,38 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="FormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormController">
     <children>
-        <MenuBar layoutX="-26.0" layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                 AnchorPane.topAnchor="0.0">
+        <MenuBar layoutX="-26.0" layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Close"/>
+                        <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About"/>
+                        <MenuItem mnemonicParsing="false" text="About" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <TabPane layoutX="8.0" layoutY="25.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
-                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <TabPane layoutX="8.0" layoutY="25.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
             <tabs>
                 <Tab text="Период">
                     <content>
                         <AnchorPane fx:id="periodAPane">
                             <children>
-                                <DatePicker fx:id="startDatePicker" layoutX="14.0" layoutY="14.0"
-                                            AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0"/>
-                                <DatePicker fx:id="endDatePicker" layoutX="14.0" layoutY="101.0"
-                                            AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0"/>
-                                <Label layoutX="14.0" layoutY="134.0" text="Длительность периода"
-                                       AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="115.0"/>
-                                <Label layoutY="6.0" text="Дата начала периода" AnchorPane.leftAnchor="14.0"
-                                       AnchorPane.topAnchor="14.0"/>
-                                <Label layoutX="14.0" layoutY="63.0" text="Дата конца периода"
-                                       AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0"/>
+                                <DatePicker fx:id="startDatePicker" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0" />
+                                <DatePicker fx:id="endDatePicker" layoutX="14.0" layoutY="101.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
+                                <Label layoutX="14.0" layoutY="134.0" text="Длительность периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="115.0" />
+                                <Label layoutY="6.0" text="Дата начала периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                <Label layoutX="14.0" layoutY="63.0" text="Дата конца периода" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="63.0" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -55,11 +46,10 @@
                             <children>
                                 <ScrollPane prefHeight="300.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="33.0">
                                     <content>
-                                        <VBox fx:id="vBox" prefWidth="580.0" spacing="3.0"/>
+                                        <VBox fx:id="vBox" prefWidth="580.0" spacing="3.0" />
                                     </content>
                                 </ScrollPane>
-                                <Button fx:id="buttonAddPeriod" mnemonicParsing="false" text="Добавить период"
-                                        AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0"/>
+                                <Button fx:id="buttonAddPeriod" mnemonicParsing="false" text="Добавить период" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -68,15 +58,39 @@
                     <content>
                         <AnchorPane fx:id="panelDatePlusPeriod">
                             <children>
-                                <Label layoutY="6.0" text="Начальная дата" AnchorPane.leftAnchor="14.0"
-                                       AnchorPane.topAnchor="14.0"/>
-                                <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="14.0"
-                                            AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0"/>
-                                <Label layoutX="14.0" layoutY="62.0" text="Период"/>
-                                <DatePicker fx:id="datePicker1" layoutX="14.0" layoutY="148.0"/>
-                                <Label layoutX="14.0" layoutY="124.0" text="Итоговая дата"/>
+                                <Label layoutY="6.0" text="Начальная дата" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="30.0" />
+                                <Label layoutX="14.0" layoutY="62.0" text="Период" />
+                                <DatePicker fx:id="datePicker1" layoutX="14.0" layoutY="148.0" />
+                                <Label layoutX="14.0" layoutY="124.0" text="Итоговая дата" />
                             </children>
                         </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Расчёт отпуска">
+                    <content>
+                        <GridPane fx:id="tableVacantion">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints valignment="CENTER" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Дата приёма" textAlignment="CENTER" />
+                        <Label text="Дата увольнения" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label text="Отработано" textAlignment="CENTER" GridPane.columnIndex="2" />
+                        <Label text="Дней отпуска насчитано" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" />
+                        <Label text="Дней отпуска использовано" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" />
+                        <Label text="Остаток" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" />
+                     </children>
+                        </GridPane>
                     </content>
                 </Tab>
             </tabs>
