@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
@@ -50,6 +49,18 @@ public class FormController {
     @FXML
     private DatePicker datePicker1;
     private PeriodView addPeriod;
+    //--- End Date Plus Period Tab ---
+
+    //--- Vacantion Tab ---
+    @FXML
+    private AnchorPane tableVacantion;
+    @FXML
+    private VBox vBoxVacan;
+    @FXML
+    private Button buttonAddPeriodVacan;
+
+    private Vacantion vacantion;
+    //--- End Vacantion Tab ---
 
 
     @FXML
@@ -103,6 +114,8 @@ public class FormController {
             }
         });
         //--- End Sum Period Tab ---
+
+        //--- Date Plus Period Tab ---
         addPeriod = new PeriodView();
         AnchorPane.setLeftAnchor(addPeriod, 14.0);
         AnchorPane.setTopAnchor(addPeriod, 80.0);
@@ -113,6 +126,12 @@ public class FormController {
                 newPeriod();
             }
         });
+        //--- End Date Plus Period Tab ---
+
+        //--- Vacantion Tab ---
+        vacantion = new Vacantion();
+        vBoxVacan.getChildren().add(vacantion);
+        //--- End Vacantion Tab ---
 
     }
 
