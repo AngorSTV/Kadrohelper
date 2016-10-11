@@ -10,7 +10,7 @@ import java.time.Period;
 /**
  * Created by Андрей on 10.10.2016.
  */
-public class Vacantion extends AnchorPane{
+public class Vacantion extends AnchorPane {
 	private IPeriod period;
 	private TextField calculatedDays;
 	private TextField usedDays;
@@ -19,7 +19,7 @@ public class Vacantion extends AnchorPane{
 
 	public Integer result;
 
-	public Vacantion(){
+	public Vacantion() {
 		super();
 		construct();
 	}
@@ -29,7 +29,7 @@ public class Vacantion extends AnchorPane{
 		period.addEventHandler(EventType.ROOT, new EventHandler<Event>() {
 			@Override
 			public void handle(Event event) {
-			if (period.getPeriod() == null) return;
+				if (period.getPeriod() == null) return;
 				count();
 			}
 		});
@@ -113,9 +113,9 @@ public class Vacantion extends AnchorPane{
 		if (rawSup.isEmpty()) return;
 
 		int supposed = Integer.valueOf(rawSup);
-		Integer fullMonth = (p.getYears()*12) + p.getMonths();
+		Integer fullMonth = (p.getYears() * 12) + p.getMonths();
 		if (p.getDays() > 13) fullMonth++;
-		calc = (supposed/12)* fullMonth;
+		calc = (supposed / 12) * fullMonth;
 		calculatedDays.setText(calc.toString());
 
 		if (usedDays.getText().isEmpty()) usedDays.setText("0");
