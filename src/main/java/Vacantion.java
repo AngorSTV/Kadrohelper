@@ -35,23 +35,23 @@ public class Vacantion extends AnchorPane {
 		});
 
 		Label lb = new Label("Начало периода");
-		AnchorPane.setLeftAnchor(lb, 14.0);
+		AnchorPane.setLeftAnchor(lb, 4.0);
 		getChildren().add(lb);
 
 		lb = new Label("Конец периода");
-		AnchorPane.setLeftAnchor(lb, 200.0);
+		AnchorPane.setLeftAnchor(lb, 115.0);
 		getChildren().add(lb);
 
 		lb = new Label("Отработано");
-		AnchorPane.setLeftAnchor(lb, 385.0);
+		AnchorPane.setLeftAnchor(lb, 230.0);
 		getChildren().add(lb);
 
 		lb = new Label("За год");
-		AnchorPane.setLeftAnchor(lb, 540.0);
+		AnchorPane.setLeftAnchor(lb, 370.0);
 		getChildren().add(lb);
 
 		supDays = new TextField();
-		AnchorPane.setLeftAnchor(supDays, 535.0);
+		AnchorPane.setLeftAnchor(supDays, 365.0);
 		AnchorPane.setTopAnchor(supDays, 20.0);
 		supDays.setPrefColumnCount(3);
 		getChildren().add(supDays);
@@ -63,14 +63,14 @@ public class Vacantion extends AnchorPane {
 			}
 		});
 
-		lb = new Label("Расчётный отпуск");
+		lb = new Label("Отпуск за период");
 		AnchorPane.setLeftAnchor(lb, 14.0);
 		AnchorPane.setTopAnchor(lb, 50.0);
 		getChildren().add(lb);
 
 		calculatedDays = new TextField();
 		AnchorPane.setTopAnchor(calculatedDays, 68.0);
-		calculatedDays.setDisable(true);
+		calculatedDays.setEditable(false);
 		getChildren().add(calculatedDays);
 
 		lb = new Label("Использовано отпуска");
