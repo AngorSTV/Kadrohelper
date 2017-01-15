@@ -1,3 +1,4 @@
+import controllers.KPeriod;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -19,16 +20,6 @@ import java.util.List;
  * Created by Андрей on 04.07.2016.
  */
 public class FormController {
-    //--- Period Tab ---
-    @FXML
-    private AnchorPane periodAPane;
-    @FXML
-    private DatePicker startDatePicker;
-    @FXML
-    private DatePicker endDatePicker;
-
-    private PeriodView resultPeriod;
-    //--- End Period Tab ---
 
     //--- Sum Period Tab ---
     @FXML
@@ -65,25 +56,6 @@ public class FormController {
 
     @FXML
     private void initialize() {
-        //--- Period Tab ---
-        resultPeriod = new PeriodView();
-        AnchorPane.setLeftAnchor(resultPeriod, 14.0);
-        AnchorPane.setTopAnchor(resultPeriod, 132.0);
-        periodAPane.getChildren().add(resultPeriod);
-
-        endDatePicker.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                calcPeriod();
-            }
-        });
-        startDatePicker.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                calcPeriod();
-            }
-        });
-        //--- End Period Tab ---
 
         //--- Sum Period Tab ---
         Label lab = new Label("Итого:");
@@ -96,15 +68,15 @@ public class FormController {
         AnchorPane.setLeftAnchor(resultSumPeriod, 340.0);
         paneSumPeriod.getChildren().add(resultSumPeriod);
 
-        vBox.getChildren().add(new IPeriod());
-        vBox.getChildren().add(new IPeriod());
+        vBox.getChildren().add(new KPeriod());
+        vBox.getChildren().add(new KPeriod());
 
         buttonAddPeriod.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 //PeriodView periodSum = new PeriodView();
                 //periodList.add(periodSum);
-                vBox.getChildren().add(new IPeriod());
+                vBox.getChildren().add(new KPeriod());
             }
         });
         vBox.addEventHandler(Event.ANY, new EventHandler<Event>() {
@@ -142,7 +114,7 @@ public class FormController {
 
         List<Node> list = vBox.getChildren();
         for (Node node:list){
-            IPeriod iper = (IPeriod)node;
+            KPeriod iper = (KPeriod)node;
             if (iper.getPeriod() == null) break;
             year += iper.getPeriod().getYears();
             month += iper.getPeriod().getMonths();
@@ -169,21 +141,5 @@ public class FormController {
 
         datePicker1.setValue(times);
 
-    }
-
-    private void calcPeriod() {
-        if (startDatePicker.getValue() == null) {
-            resultPeriod.setPeriod(Period.ZERO);
-            return;
-        }
-        if (endDatePicker.getValue() == null) {
-            resultPeriod.setPeriod(Period.ZERO);
-            return;
-        }
-
-        LocalDate startDate = startDatePicker.getValue();
-        LocalDate endDate = endDatePicker.getValue();
-        Period period = Period.between(startDate, endDate);
-        resultPeriod.setPeriod(period);
     }
 }

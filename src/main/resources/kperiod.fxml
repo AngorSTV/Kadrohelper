@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="HBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label text=" с "/>
+        <DatePicker fx:id="startDate" onAction="#refresh"/>
+        <Label text=" по "/>
+        <DatePicker fx:id="endDate" onAction="#refresh"/>
+        <Label text=" = "/>
+        <TextField fx:id="resultPeriod"/>
+    </children>
+</fx:root>

@@ -1,3 +1,4 @@
+import controllers.KPeriod;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
@@ -11,7 +12,7 @@ import java.time.Period;
  * Created by Андрей on 10.10.2016.
  */
 public class Vacantion extends AnchorPane {
-	private IPeriod period;
+	private KPeriod period;
 	private TextField calculatedDays;
 	private TextField usedDays;
 	private TextField restDays;
@@ -25,7 +26,7 @@ public class Vacantion extends AnchorPane {
 	}
 
 	private void construct() {
-		period = new IPeriod();
+		period = new KPeriod();
 		period.addEventHandler(EventType.ROOT, new EventHandler<Event>() {
 			@Override
 			public void handle(Event event) {
