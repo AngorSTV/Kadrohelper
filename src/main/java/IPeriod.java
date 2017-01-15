@@ -1,11 +1,8 @@
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.control.Control;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 
 import java.time.Period;
@@ -46,10 +43,13 @@ public class IPeriod extends HBox {
     }
 
     private void construct() {
+        startDate.setPrefWidth(100);
         getChildren().add(startDate);
         getChildren().add(new Label(" - "));
+        endDate.setPrefWidth(100);
         getChildren().add(endDate);
         getChildren().add(new Label(" = "));
+        resultPeriod.setPrefWidth(130);
         getChildren().add(resultPeriod);
 
     }

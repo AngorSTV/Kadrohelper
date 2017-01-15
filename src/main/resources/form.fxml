@@ -40,7 +40,7 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Сумма периодов">
+                <Tab text="Стаж">
                     <content>
                         <AnchorPane fx:id="paneSumPeriod">
                             <children>
@@ -54,7 +54,7 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Дата + период">
+                <Tab text="Новый период после декретного">
                     <content>
                         <AnchorPane fx:id="panelDatePlusPeriod">
                             <children>
@@ -67,7 +67,7 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Расчёт отпуска">
+                <Tab text="Расчёт остатка отпуска">
                     <content>
                         <AnchorPane fx:id="tableVacantion">
                             <children>
