@@ -12,6 +12,8 @@ import java.time.Period;
 /**
  * Created by Андрей on 05.07.2016.
  * Вью и контроллер периода
+ * с раздельным отображеним
+ * года, месяца и дней
  */
 public class PeriodView extends AnchorPane {
     private Period period;

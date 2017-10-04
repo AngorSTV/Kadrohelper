@@ -1,4 +1,5 @@
 import controllers.KPeriod;
+import controllers.Vperiod;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -21,16 +22,15 @@ import java.util.List;
  */
 public class FormController {
 
-    //--- Sum Period Tab ---
+    //--- "Стаж" Tab ---
     @FXML
     private VBox vBox;
     @FXML
     private Button buttonAddPeriod;
     @FXML
     private AnchorPane paneSumPeriod;
-    private List<PeriodView> periodList = new ArrayList<>();
     private PeriodView resultSumPeriod;
-    //--- End Sum Period Tab ---
+    //--- End "Стаж" Tab ---
 
     //--- Date Plus Period Tab ---
     @FXML
@@ -57,7 +57,7 @@ public class FormController {
     @FXML
     private void initialize() {
 
-        //--- Sum Period Tab ---
+        //--- "Стаж" Tab ---
         Label lab = new Label("Итого:");
         AnchorPane.setTopAnchor(lab, 6.0);
         AnchorPane.setLeftAnchor(lab, 300.0);
@@ -74,8 +74,6 @@ public class FormController {
         buttonAddPeriod.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //PeriodView periodSum = new PeriodView();
-                //periodList.add(periodSum);
                 vBox.getChildren().add(new KPeriod());
             }
         });
@@ -85,7 +83,7 @@ public class FormController {
                 sumPeriod();
             }
         });
-        //--- End Sum Period Tab ---
+        //--- End "Стаж" Tab ---
 
         //--- Date Plus Period Tab ---
         addPeriod = new PeriodView();
@@ -102,11 +100,14 @@ public class FormController {
 
         //--- Vacantion Tab ---
         vacantion = new Vacantion();
-        vBoxVacan.getChildren().add(vacantion);
+        vBoxVacan.getChildren().add(new Vperiod());
         //--- End Vacantion Tab ---
 
     }
 
+    /**
+     * сумирует периоды KPeriod в VBox закладки "Стаж"
+     */
     private void sumPeriod() {
         int year = 0;
         int month = 0;

@@ -11,6 +11,9 @@ import java.time.Period;
 
 /**
  * Created by angor on 15.01.2017.
+ * кастомный элемент для отображения
+ * начала периода, его конца и
+ * подсчёта разницы между этими датами
  */
 public class KPeriod extends HBox {
 

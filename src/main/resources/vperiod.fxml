@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import controllers.KPeriod?>
+<?import javafx.geometry.Insets?>
+<fx:root type="VBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <KPeriod fx:id="kPeriod" onMouseClicked="#refresh"/>
+        <HBox spacing="10">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text=" Положенно за год"/>
+                        <TextField maxWidth="105" fx:id="forYear" onKeyReleased="#refresh"/>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text=" Отпуск за период"/>
+                        <TextField maxWidth="105" fx:id="calcDays"/>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text=" Использовано отпуска"/>
+                        <TextField maxWidth="128" fx:id="usedDays" onKeyReleased="#refresh"/>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text="Остаток отпуска"/>
+                        <TextField maxWidth="100" fx:id="restDays"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</fx:root>

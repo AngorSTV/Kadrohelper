@@ -21,7 +21,7 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("form.fxml"));
             Scene scene = new Scene(root);
-            stage.setTitle("Помошник кадровика");
+            stage.setTitle("Помошник кадровика v 1.1");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
