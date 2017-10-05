@@ -17,7 +17,7 @@ public class Vacantion extends AnchorPane {
 	private TextField restDays;
 	private TextField supDays;
 
-	public Integer result;
+	public Float result;
 
 	public Vacantion() {
 		super();
@@ -105,7 +105,7 @@ public class Vacantion extends AnchorPane {
 	}
 
 	private void count() {
-		Integer calc;
+		Float calc;
 		Period p = period.getPeriod();
 		String rawSup = supDays.getText();
 
@@ -115,7 +115,7 @@ public class Vacantion extends AnchorPane {
 		int supposed = Integer.valueOf(rawSup);
 		Integer fullMonth = (p.getYears() * 12) + p.getMonths();
 		if (p.getDays() > 13) fullMonth++;
-		calc = (supposed / 12) * fullMonth;
+		calc = (supposed / 12.0f) * fullMonth;
 		calculatedDays.setText(calc.toString());
 
 		if (usedDays.getText().isEmpty()) usedDays.setText("0");
