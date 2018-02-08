@@ -114,7 +114,7 @@ public class Vacantion extends AnchorPane {
 
 		int supposed = Integer.valueOf(rawSup);
 		Integer fullMonth = (p.getYears() * 12) + p.getMonths();
-		if (p.getDays() > 13) fullMonth++;
+		if (p.getDays() > 14) fullMonth++;
 		calc = (supposed / 12.0f) * fullMonth;
 		calculatedDays.setText(calc.toString());
 
