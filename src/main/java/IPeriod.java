@@ -43,13 +43,13 @@ public class IPeriod extends HBox {
     }
 
     private void construct() {
-        startDate.setPrefWidth(100);
+        startDate.setPrefWidth(130);
         getChildren().add(startDate);
         getChildren().add(new Label(" - "));
-        endDate.setPrefWidth(100);
+        endDate.setPrefWidth(130);
         getChildren().add(endDate);
         getChildren().add(new Label(" = "));
-        resultPeriod.setPrefWidth(130);
+        resultPeriod.setPrefWidth(150);
         getChildren().add(resultPeriod);
 
     }
